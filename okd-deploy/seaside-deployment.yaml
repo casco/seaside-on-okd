@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: seaside
+  name: seaside
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+     app: seaside        
+  template:
+    metadata:            
+      labels:
+        app: seaside        
+    spec:
+      containers:
+        - name: seaside
+          image: casco/seaside-okd-demo:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP     
