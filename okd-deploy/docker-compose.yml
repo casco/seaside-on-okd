@@ -3,8 +3,9 @@
 version: "3"  
 services:
   web:
-    image: casco/seaside-okdd-demo:latest
+    image: casco/seaside-okd-demo:latest
     restart: unless-stopped
+    read_only: false
     ports:
         - "8080:8080"
 

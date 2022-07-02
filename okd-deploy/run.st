@@ -1,3 +1,4 @@
 WAAdmin register: SeasideOkdDemoComponent asApplicationAt: 'demo'.
 WAAdmin defaultDispatcher defaultName: 'demo'.
-Transcript cr; show: 'Memorias starting  (dbhost: ', dbhost, ', db: ', db, ')'; cr; cr.
+Transcript cr; show: 'Demo is running'.
+Transcript cr; show: 'PharoCommandLineHandler forcePreferencesOmission -> ', PharoCommandLineHandler forcePreferencesOmission printString.

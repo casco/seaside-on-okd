@@ -3,3 +3,4 @@ Metacello new
 	repository: 'github://casco/seaside-okd-demo:main';
 	onConflictUseLoaded;
 	load.
+PharoCommandLineHandler forcePreferencesOmission: true.	
