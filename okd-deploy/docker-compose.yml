@@ -1,0 +1,10 @@
+# run with docker-compose up -d
+
+version: "3"  
+services:
+  web:
+    image: casco/seaside-okdd-demo:latest
+    restart: unless-stopped
+    ports:
+        - "8080:8080"
+
