@@ -10,6 +10,9 @@ Class {
 
 { #category : #rendering }
 SeasideOkdDemoComponent >> renderContentOn: html [
-	html heading: 'Your demo is working!'
-	
+	html heading: 'Your demo is working!'.
+	html
+		paragraph:
+			'PharoCommandLineHandler forcePreferencesOmission printString -> '
+				, PharoCommandLineHandler forcePreferencesOmission printString
 ]
