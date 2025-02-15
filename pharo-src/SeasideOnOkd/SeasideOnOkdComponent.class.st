@@ -3,13 +3,13 @@ WAAdmin register: SeasideOnOkdComponent asApplicationAt: 'home'.
 WAAdmin defaultDispatcher defaultName: 'home'.
 "
 Class {
-	#name : #SeasidOneOkdComponent,
+	#name : #SeasideOnOkdComponent,
 	#superclass : #WAComponent,
 	#category : #SeasideOnOkd
 }
 
 { #category : #rendering }
-SeasidOneOkdComponent >> renderContentOn: html [
+SeasideOnOkdComponent >> renderContentOn: html [
 	html heading: 'Your demo is working!'.
 	html
 		paragraph:
