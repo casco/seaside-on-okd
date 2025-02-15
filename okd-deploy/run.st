@@ -1,7 +1,7 @@
-WAAdmin register: SeasideOkdDemoComponent asApplicationAt: 'demo'.
-WAAdmin defaultDispatcher defaultName: 'demo'.
+WAAdmin register: SeasideOnOkdComponent asApplicationAt: 'home'.
+WAAdmin defaultDispatcher defaultName: 'home'.
 Transcript cr; 
-        show: 'Demo is running happily';
+        show: 'App is running happily';
         cr;
         show: 'PharoCommandLineHandler forcePreferencesOmission -> ', PharoCommandLineHandler forcePreferencesOmission printString;
         cr.

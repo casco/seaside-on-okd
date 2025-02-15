@@ -1,6 +1,9 @@
 Metacello new
-	baseline: 'SeasideOkdDemo';
-	repository: 'github://casco/seaside-okd-demo:main';
+	baseline: 'SeasideOnOkd';
+	repository: 'github://casco/seaside-on-okd:main';
 	onConflictUseLoaded;
 	load.
-PharoCommandLineHandler forcePreferencesOmission: true.	
+"Disable loading of preferences"	
+PharoCommandLineHandler forcePreferencesOmission: true.
+"Disable Epicea"
+EpMonitor reset.

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: seaside
-          image: casco/seaside-okd-demo:latest
+          image: casco/seaside-on-okd:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
