@@ -7,8 +7,8 @@ Building the image with "PharoCommandLineHandler forcePreferencesOmission: true.
 
 ```Smalltalk
 Metacello new
-	baseline: 'Lifiometro';
-	repository: 'github://lifia-unlp/memorias:main';
+	baseline: 'SeasideOkdDemo';
+	repository: 'github://casco/seaside-on-okd:main';
 	onConflictUseLoaded;
 	onWarningLog;
 	load.
