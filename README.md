@@ -7,7 +7,7 @@ Building the image with "PharoCommandLineHandler forcePreferencesOmission: true.
 
 ```Smalltalk
 Metacello new
-	baseline: 'SeasideOkdDemo';
+	baseline: 'SeasideOnOkd';
 	repository: 'github://casco/seaside-on-okd:main';
 	onConflictUseLoaded;
 	onWarningLog;
