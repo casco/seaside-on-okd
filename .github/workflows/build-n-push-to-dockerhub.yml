@@ -1,0 +1,36 @@
+name: Build and Push to Dockerhub 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Build Docker image with both tags
+        run: |
+          
+          # Use only the first 7 characters of the commit SHA (common practice)
+          COMMIT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+
+          # Build the image and tag it twice
+          docker build \
+            -f ../../okd-deploy/Dockerfile \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:latest \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:$COMMIT_SHA \
+            ../../okd-deploy
+
+      - name: Push "latest" tag
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:latest
+
+      - name: Push commit-specific tag
+        run: |
+          COMMIT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:$COMMIT_SHA
