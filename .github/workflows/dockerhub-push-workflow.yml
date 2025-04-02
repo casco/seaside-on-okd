@@ -22,9 +22,10 @@ jobs:
 
           # Build the image and tag it twice
           docker build \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app:$COMMIT_SHA \
-            .
+            -f ../okd-deploy/Dockerfile \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:latest \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:$COMMIT_SHA \
+            ../okd-deploy
 
       - name: Push "latest" tag
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:latest
