@@ -23,14 +23,14 @@ jobs:
           # Build the image and tag it twice
           docker build \
             -f okd-deploy/Dockerfile \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:latest \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:$COMMIT_SHA \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-on-okd:latest \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/seaside-on-okd:$COMMIT_SHA \
             okd-deploy
 
       - name: Push "latest" tag
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/seaside-on-okd:latest
 
       - name: Push commit-specific tag
         run: |
           COMMIT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/seaside-in-okd:$COMMIT_SHA
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/seaside-on-okd:$COMMIT_SHA
